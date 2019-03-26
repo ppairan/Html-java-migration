@@ -1,13 +1,14 @@
 package com.example.project.repository;
 
 import com.example.project.model.User;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+@Component
 public class DbRepository {
 
     public User findbyid() {
@@ -35,7 +36,7 @@ public class DbRepository {
             ArrayList<User> users = new ArrayList<>();
 
             try {
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/praktikum", "admin", "admin");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/praktikum", "root", "");
                 PreparedStatement stm = conn.prepareStatement("SELECT * FROM ITAM");
                 ResultSet rs = stm.executeQuery();
                 while (rs.next()) {
