@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Praktikumsprojekt Homepage</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet"  type="text/css" th:href="@{/css/figuren.css}"/>
+
+</head>
+<body onload="druck()">
+<div class="mc">
+    <hr>
+    <h1> Migration mit Java & MySQL</h1>
+    <hr>
+    <div class="sc">
+        <ul>
+            <li><a href="#" th:href="@{/start}">Home</a></li>
+            <li><a href="#" th:href="@{/admin}">Tabellenverwalten</a></li>
+            <li><a href="#" th:href="@{/status}">Server Status</a></li>
+            <li><a href="#" th:href="@{/index}">Logout</a></li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <div class="sc">
+        <h2>Willkommen Admin</h2>
+        <div3 id="connection" th:text="${SeStatus}"></div3>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="st">
+        <div id="pacman"></div>
+    </div>
+    <div class="st cspos">
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <div id="change" class="si"></div>
+    </div>
+    <div>
+    </div>
+</div>
+
+
+</body>
+<script th:src="@{/js/javas.js}"></script>
+</html>

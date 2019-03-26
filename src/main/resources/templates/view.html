@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Praktikumsprojekt Homepage</title>
+    <link rel="stylesheet"  type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet"  type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet"  type="text/css" th:href="@{/css/figuren.css}"/>
+</head>
+<body>
+<div class="mc">
+    <hr>
+    <h1> Migration mit Java & MySQL</h1>
+    <hr>
+    <div class="sc">
+        <ul>
+            <li><a href="#" th:href="@{/start}">Home</a></li>
+            <li><a href="#" th:href="@{/admin}">Tabellenverwalten</a></li>
+            <li><a href="#" th:href="@{/status}">Server Status</a></li>
+            <li><a href="#" th:href="@{/index}">Logout</a></li>
+        </ul>
+    </div>
+    <br>
+    <table class="table">
+        <th>ID</th>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Gebursttag</th>
+        <tr th:each="view : ${usert}">
+        <td th:text="${view.id}">ID</td>
+        <td th:text="${view.vorn}">Vorname</td>
+        <td th:text="${view.nachn}">Nachname</td>
+        <td th:text="${view.date}">Geburtstag</td>
+        </tr>
+    </table>
+</div>
+<div class="sb">
+
+</div>
+
+
+
+</body>
+<script th:src="@{/js/javas.js}"></script>
+</html>

@@ -1,0 +1,178 @@
+
+#pacman {
+   width: 0px;
+   height: 0px;
+   border-right: 80px solid transparent!important;
+   border-top: 80px solid #d4d26d!important;
+   border-left: 80px solid #d4d26d!important;
+   border-bottom: 80px solid #d4d26d!important;
+   border-top-left-radius: 80px!important;
+   border-top-right-radius: 80px!important;
+   border-bottom-left-radius: 80px!important;
+   border-bottom-right-radius: 80px!important; }
+
+.st{
+ position: absolute;
+ left:15%;
+
+ flex-direction: row;
+}
+
+st > span{
+ align-items: baseline;
+ align-content:center;
+ }
+
+.cspos{
+  position: absolute;
+  top: 380px;
+  left:22% ;
+}
+.circle {
+  margin-right: 15px;
+  height: 25px;
+  width: 25px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+ .si { box-shadow: 0 0 0 1em red,
+  0 1em 0 1em red, -2.5em 1.5em 0 .5em red,
+  2.5em 1.5em 0 .5em red, -3em -3em 0 0 red,
+  3em -3em 0 0 red, -2em -2em 0 0 red,
+  2em -2em 0 0 red, -3em -1em 0 0 red,
+  -2em -1em 0 0 red, 2em -1em 0 0 red,
+  3em -1em 0 0 red, -4em 0 0 0 red,
+  -3em 0 0 0 red, 3em 0 0 0 red,
+  4em 0 0 0 red, -5em 1em 0 0 red,
+  -4em 1em 0 0 red, 4em 1em 0 0 red,
+  5em 1em 0 0 red, -5em 2em 0 0 red,
+  5em 2em 0 0 red, -5em 3em 0 0 red,
+  -3em 3em 0 0 red, 3em 3em 0 0 red,
+  5em 3em 0 0 red, -2em 4em 0 0 red,
+  -1em 4em 0 0 red, 1em 4em 0 0 red,
+  2em 4em 0 0 red; background: red;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  margin: -35px 0 50px 250px;
+  }
+
+ .sig { box-shadow: 0 0 0 1em green,
+  0 1em 0 1em green, -2.5em 1.5em 0 .5em green,
+  2.5em 1.5em 0 .5em green, -3em -3em 0 0 green,
+  3em -3em 0 0 green, -2em -2em 0 0 green,
+  2em -2em 0 0 green, -3em -1em 0 0 green,
+  -2em -1em 0 0 green, 2em -1em 0 0 green,
+  3em -1em 0 0 green, -4em 0 0 0 green,
+  -3em 0 0 0 green, 3em 0 0 0 green,
+  4em 0 0 0 green, -5em 1em 0 0 green,
+  -4em 1em 0 0 green, 4em 1em 0 0 green,
+  5em 1em 0 0 green, -5em 2em 0 0 green,
+  5em 2em 0 0 green, -5em 3em 0 0 green,
+  -3em 3em 0 0 green, 3em 3em 0 0 green,
+  5em 3em 0 0 green, -2em 4em 0 0 green,
+  -1em 4em 0 0 green, 1em 4em 0 0 green,
+  2em 4em 0 0 green; background: green;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  margin: -35px 0 50px 250px; }
+
+ .hexagon {
+   position: relative;
+   width: 300px;
+   height: 173.21px;
+   background-color: #31af0e;
+   margin: 86.60px 0;
+   border-left: solid 5px #ffffff;
+   border-right: solid 5px #ffffff;
+ }
+
+ .hexagon:before,
+ .hexagon:after {
+   content: "";
+   position: absolute;
+   z-index: 1;
+   width: 212.13px;
+   height: 212.13px;
+   -webkit-transform: scaleY(0.5774) rotate(-45deg);
+   -ms-transform: scaleY(0.5774) rotate(-45deg);
+   transform: scaleY(0.5774) rotate(-45deg);
+   background-color: inherit;
+   left: 38.9340px;
+ }
+
+ .hexagon:before {
+   top: -106.0660px;
+   border-top: solid 7.0711px #ffffff;
+   border-right: solid 7.0711px #ffffff;
+ }
+
+ .hexagon:after {
+   bottom: -106.0660px;
+   border-bottom: solid 7.0711px #ffffff;
+   border-left: solid 7.0711px #ffffff;
+ }
+
+ .hexpos{
+ position:fixed;
+ top:35%;
+ left:15%;
+ }
+
+  .hexpos2{
+  position:fixed;
+  top:35%;
+  left:40%;
+  }
+
+.hexpos3{
+ position:fixed;
+ top:35%;
+ right:20%;
+ }
+
+.hexagon:hover{
+ background-color: gray;
+ border-left : solid 5px #e20bd4;
+ border-right : solid 5px #e20bd4;
+ color:white;
+}
+
+.hexagon:before.hover{
+ border-top: solid 7.0711px #e20bd4;
+ border-right: solid 7.0711px #e20bd4;
+}
+.hexagon:after:hover{
+ background-color: gray;
+ border-botton: solid 7.0711px #e20bd4;
+ border-left: solid 7.0711px #e20bd4;
+}
+
+ .text{
+   position: absolute;
+ z-index: 1000;
+ width: 100%;
+ text-align: center;
+ color: black;
+ font-family: "Comic Sans MS" , cursive , sans-serif;
+ font-size: 38px;
+ position: absolute;
+ top: 50px;
+ }
+ .text2{
+    position: absolute;
+  z-index: 1000;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-family: "Comic Sans MS" , cursive , sans-serif;
+  font-size: 38px;
+  position: absolute;
+  top: 35px;
+  }
+
+ .text:hover ,text2:hover{
+ color:white;
+ }

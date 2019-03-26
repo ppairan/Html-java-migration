@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Praktikumsprojekt Homepage</title>
+    <link rel="stylesheet"  type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet"  type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet"  type="text/css" th:href="@{/css/figuren.css}"/>
+</head>
+<body>
+<div class="mc">
+    <hr>
+    <h1> Migration mit Java & MySQL</h1>
+    <hr>
+    <div class="sc">
+        <ul>
+            <li><a href="#" th:href="@{/start}">Home</a></li>
+            <li><a href="#" th:href="@{/admin}">Tabellenverwalten</a></li>
+            <li><a href="#" th:href="@{/status}">Server Status</a></li>
+            <li><a href="#" th:href="@{/index}">Logout</a></li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <div class="sc">
+        <h2>Willkommen Admin</h2>
+        <span> Hier kannst du Werte in der Existierenden Tabelle hinzufügen</span>
+        <span> Datenbank brauchst!</span>
+    </div>
+</div>
+<div class="sb">
+
+</div>
+
+
+
+</body>
+<script th:src="@{/js/javas.js}"></script>
+</html>
