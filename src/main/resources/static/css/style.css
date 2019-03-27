@@ -76,7 +76,15 @@ li a:hover {
     position:fixed;
     top: 20%;
     left: 12.5%;
-    text-align:center;
+
+}
+
+th,td {
+    text-align:left;
+}
+
+td:hover{
+background-color:green;
 }
 
 

@@ -19,7 +19,9 @@ public class SerController {
     @Autowired
     private DbRepository dbRepository;
 
-    //Webseitenanzeige
+   // @Autowired AdRepository adRepository;
+
+    //Webseitenanzeige GetMappings
 
     @GetMapping(value = "/")
     public String index() {
@@ -50,7 +52,8 @@ public class SerController {
     }
 
     @GetMapping(value = "/change")
-    public String getChange(){
+    public String getChange()
+    {
         return "change";
     }
 
@@ -59,6 +62,8 @@ public class SerController {
         return "kill";
     }
 
+
+    // Postmapping Webseiten
 
 
 

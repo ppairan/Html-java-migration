@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Praktikumsprojekt Homepage</title>
-    <link rel="stylesheet"  type="text/css" th:href="@{/css/bootstrap.min.css}"/>
-    <link rel="stylesheet"  type="text/css" th:href="@{/css/style.css}"/>
-    <link rel="stylesheet"  type="text/css" th:href="@{/css/figuren.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/figuren.css}"/>
 </head>
 <body>
 <div class="mc">
@@ -21,17 +21,16 @@
         </ul>
     </div>
     <br>
-    <br>
-    <div class="sc">
-        <h2>Willkommen Admin</h2>
-        <span> Hier kannst du Werte in der Existierenden Tabelle hinzufügen</span>
-        <span> Datenbank brauchst!</span>
-    </div>
+    <form action="#" th:action="@{/change}" th:object="${usert}" method="post">
+        <input type="text" th:field="*{vorn}" placeholder="Vorname"/>
+        <input type="text" th:field="*{nachn}" placeholder="Nachname"/>
+        <input type="text" th:field="*{date}" placeholder="YYYY-MM-DD"/>
+        <input type="submit" value="Submit"/>
+    </form>
 </div>
 <div class="sb">
 
 </div>
-
 
 
 </body>

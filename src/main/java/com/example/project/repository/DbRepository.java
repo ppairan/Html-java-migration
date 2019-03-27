@@ -11,7 +11,7 @@ import java.util.List;
 @Component
 public class DbRepository {
 
-    public User findbyid() {
+    /*public User findbyid() {
         User user = new User();
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/praktikum", "admin", "admin");
@@ -31,7 +31,7 @@ public class DbRepository {
             System.err.println(e.getMessage());
         }
         return user;
-    }
+    }*/
         public List <User> findall() {
             ArrayList<User> users = new ArrayList<>();
 
