@@ -45,21 +45,21 @@ public class SerController {
     }
 
     @GetMapping(value = "/status")
-    public String getStatus(@ModelAttribute("SeStatus") ServerStatus serverStatus, Model model ) {
+    public String getStatus(@ModelAttribute("SeStatus") ServerStatus serverStatus, Model model) {
         model.addAttribute("SeStatus", ServerStatus.server());
 
         return "status";
     }
 
     @GetMapping(value = "/view")
-    public String getView(@ModelAttribute(value = "user") DbRepository dbRepositoryUser, @ModelAttribute("table") DbRepository dbRepositoryTab ,  Model model) {
+    public String getView(@ModelAttribute(value = "user") DbRepository dbRepositoryUser, @ModelAttribute("table") DbRepository dbRepositoryTab, Model model) {
         model.addAttribute("usert", dbRepositoryUser.findall());
-        model.addAttribute("tablet",dbRepositoryTab.tableview());
+        model.addAttribute("tablet", dbRepositoryTab.tableview());
         return "view";
     }
 
     @GetMapping(value = "/create")
-    public String getCreate(){
+    public String getCreate() {
         return "create";
     }
 
@@ -71,15 +71,15 @@ public class SerController {
     // Postmapping Webseiten
 
     @PostMapping(value = "/create")
-    public String create(@RequestParam("vorn") String vorn, @RequestParam("nachn") String nachn){
+    public String create(@RequestParam("vorn") String vorn, @RequestParam("nachn") String nachn) {
         User u = new User();
         u.setVorn(vorn);
         u.setNachn(nachn);
         u.setDate("1993-05-12");
-        usRepository.addUser(u);;
+        usRepository.addUser(u);
+        ;
         return "create";
     }
-
 
 
     //Modelattribute
@@ -88,8 +88,11 @@ public class SerController {
         return projektService.getServerstatus();
     }
 
-    //Requestmapping
-
-
-
 }
+   /* @ModelAttribute
+    public String tablet(Model model ){ return dbRepository.tableview();}
+    //Requestmapping
+*/
+
+
+
