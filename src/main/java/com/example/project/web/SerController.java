@@ -52,7 +52,7 @@ public class SerController {
     }
 
     @GetMapping(value = "/view")
-    public String getView(@ModelAttribute(value = "user") DbRepository dbRepositoryUser, @ModelAttribute("tablet") DbRepository dbRepositoryTab ,  Model model) {
+    public String getView(@ModelAttribute(value = "user") DbRepository dbRepositoryUser, @ModelAttribute("table") DbRepository dbRepositoryTab ,  Model model) {
         model.addAttribute("usert", dbRepositoryUser.findall());
         model.addAttribute("tablet",dbRepositoryTab.tableview());
         return "view";
