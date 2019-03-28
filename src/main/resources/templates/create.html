@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Praktikumsprojekt Homepage</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/figuren.css}"/>
+</head>
+<body>
+<div class="mc">
+    <hr>
+    <h1> Migration mit Java & MySQL</h1>
+    <hr>
+    <div class="sc">
+        <ul>
+            <li><a href="#" th:href="@{/start}">Home</a></li>
+            <li><a href="#" th:href="@{/admin}">Tabellenverwalten</a></li>
+            <li><a href="#" th:href="@{/status}">Server Status</a></li>
+            <li><a href="#" th:href="@{/index}">Logout</a></li>
+        </ul>
+    </div>
+    <br>
+    <form name="test" action="#" th:action="@{/create}" th:object="${adduser}" method="post">
+        <div>
+            <div>
+                <div>Vorname:</div>
+                <div><input name="vorn"> </input></div>
+            </div>
+            <div>
+                <div>Nachname:</div>
+                <div><input name="nachn"> </input></div>
+            </div>
+            <div>
+                <div>Geburstdatum:</div>
+                <div><input name="date"> </input></div>
+            </div>
+            <div>
+                <input type="submit" value="Submit"/>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="sb">
+
+</div>
+
+
+</body>
+<script th:src="@{/js/javas.js}"></script>
+</html>
