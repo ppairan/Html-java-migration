@@ -1,10 +1,8 @@
 package com.example.project.web;
 
-import com.example.project.Services.ProjektService;
-import com.example.project.Services.ServerStatus;
+import com.example.project.Services.AppService;
 import com.example.project.model.User;
-import com.example.project.repository.DbRepository;
-import com.example.project.repository.UsRepository;
+import com.example.project.repository.AppRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,13 +16,11 @@ public class SerController {
 
 
     @Autowired
-    private ProjektService projektService;
+    private AppService appService;
 
     @Autowired
-    private DbRepository dbRepository;
+    private AppRepository appRepository;
 
-    @Autowired
-    private UsRepository usRepository;
 
     //Webseitenanzeige GetMappings
 
@@ -45,16 +41,16 @@ public class SerController {
     }
 
     @GetMapping(value = "/status")
-    public String getStatus(@ModelAttribute("SeStatus") ServerStatus serverStatus, Model model) {
-        model.addAttribute("SeStatus", ServerStatus.server());
+    public String getStatus(@ModelAttribute("SeStatus") AppService serverStatus, Model model) {
+        model.addAttribute("SeStatus", appService.server());
 
         return "status";
     }
 
     @GetMapping(value = "/view")
-    public String getView(@ModelAttribute(value = "user") DbRepository dbRepositoryUser, @ModelAttribute("table") DbRepository dbRepositoryTab, Model model) {
-        model.addAttribute("usert", dbRepositoryUser.findall());
-        model.addAttribute("tablet", dbRepositoryTab.tableview());
+    public String getView(@ModelAttribute(value = "user") AppRepository appRepositoryUser, @ModelAttribute("table") AppRepository appRepositoryTab, Model model) {
+        model.addAttribute("usert", appRepositoryUser.findall());
+        model.addAttribute("tablet", appRepositoryTab.tableview());
         return "view";
     }
 
@@ -71,13 +67,12 @@ public class SerController {
     // Postmapping Webseiten
 
     @PostMapping(value = "/create")
-    public String create(@RequestParam("vorn") String vorn, @RequestParam("nachn") String nachn) {
+    public String create(@RequestParam("vorn") String vorn, @RequestParam("nachn") String nachn ) {
         User u = new User();
-        u.setVorn(vorn);
-        u.setNachn(nachn);
-        u.setDate("1993-05-12");
-        usRepository.addUser(u);
-        ;
+        u.setVorname(vorn);
+        u.setNachname(nachn);
+
+        appRepository.addUser(u);
         return "create";
     }
 
@@ -85,14 +80,10 @@ public class SerController {
     //Modelattribute
     @ModelAttribute
     public String message(Model model) {
-        return projektService.getServerstatus();
+        return appService.server();
     }
 
 }
-   /* @ModelAttribute
-    public String tablet(Model model ){ return dbRepository.tableview();}
-    //Requestmapping
-*/
 
 
 

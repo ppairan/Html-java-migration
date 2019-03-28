@@ -22,7 +22,14 @@ h2{
 color:white;
 }
 
-h1 ,hr{
+.h2{
+margin-left:38%;
+margin-right: 38%;
+text-align: center;
+color: white;
+text-shadow: 1px 1px 1px gray;
+}
+h1,hr{
 margin-left:38%;
 margin-right: 38%;
 text-align: center;
@@ -69,23 +76,33 @@ li a:hover {
 }
 
 .table2{
-    width: 25%;
+    width: 15%;
     background-color:gray;
     color: white;
     text-shadow: 1px 1px 1px black;
     position:fixed;
-    top: 80%;
-    left: 20%;
+    top: 20%;
+    left: 12.5%;
+
 
 }
 
+.th2{
+border-bottom: 1px solid #ddd;
+text-align:center;
+}
+.tr2{
+border-bottom: 1px solid #ddd;
+text-align:center;
+font-size: 200%;
+}
 .table{
     width: 75%;
     background-color:gray;
     color: white;
     text-shadow: 1px 1px 1px black;
     position:fixed;
-    top: 20%;
+    top: 30%;
     left: 12.5%;
 
 }
@@ -95,8 +112,29 @@ li a:hover {
 }
 
 td:hover{
-background-color:green;
+    background-color:green;
 }
 
+.creator{
+position:absolute;
+top:30%;
+left:40%;
+display-flex:flex;
+flex-direction:row;
+}
 
+.creattext{
+color:white;
+text-shadow: 1px 1px 1px red;
+}
 
+.btn{
+width:45%;
+border-radius:15%;
+position: absolute;
+left:45%;
+}
+
+.btn:hover {
+      box-shadow: 0 12px 16px 0 red, 0 17px 50px 0 red;
+    }

@@ -12,31 +12,29 @@
     <hr>
     <h1> Migration mit Java & MySQL</h1>
     <hr>
+    <h2 class="h2">Eintragen von werten in einer SQL tabelle</h2>
     <div class="sc">
         <ul>
             <li><a href="#" th:href="@{/start}">Home</a></li>
             <li><a href="#" th:href="@{/admin}">Tabellenverwalten</a></li>
             <li><a href="#" th:href="@{/status}">Server Status</a></li>
-            <li><a href="#" th:href="@{/index}">Logout</a></li>
+            <li><a href="#" th:href="@{/}">Logout</a></li>
         </ul>
     </div>
     <br>
     <form name="test" action="#" th:action="@{/create}" th:object="${adduser}" method="post">
-        <div>
+        <div class="creator">
             <div>
-                <div>Vorname:</div>
-                <div><input name="vorn"> </input></div>
+                <label class="creattext">Vorname: </label>
+                <input name="vorname"/>
             </div>
             <div>
-                <div>Nachname:</div>
-                <div><input name="nachn"> </input></div>
+                <label class="creattext">Nachname: </label>
+                <input name="nachname"/>
             </div>
+            <br>
             <div>
-                <div>Geburstdatum:</div>
-                <div><input name="date"> </input></div>
-            </div>
-            <div>
-                <input type="submit" value="Submit"/>
+                <input class="btn" type="submit" value="Bestätigen!"/>
             </div>
         </div>
     </form>

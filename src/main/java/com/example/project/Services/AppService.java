@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 import java.sql.*;
 
 @Service
-public class ServerStatus {
+public class AppService {
 
 
-    public static String server() {
+    public String server() {
         boolean b = false;
         try {
 

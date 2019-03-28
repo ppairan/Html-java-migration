@@ -17,7 +17,7 @@
             <li><a href="#" th:href="@{/start}">Home</a></li>
             <li><a href="#" th:href="@{/admin}">Tabellenverwalten</a></li>
             <li><a href="#" th:href="@{/status}">Server Status</a></li>
-            <li><a href="#" th:href="@{/index}">Logout</a></li>
+            <li><a href="#" th:href="@{/}">Logout</a></li>
         </ul>
     </div>
     <br>
@@ -25,10 +25,9 @@
     <br>
     <div>
     <table class="table2">
-        <th>Tabellen Namen</th>
-        <th>test</th>
-        <tr th:each="view: ${tablet}">
-            <td th:text="${tablet.name}">Tabellennamen</td>
+        <th class="th2">Tabellen Namen</th>
+        <tr class="tr2" th:each="tablet : ${tablet}">
+            <td class="th2" th:text="${tablet.name}">Tabellennamen</td>
         </tr>
     </table></div>
     <br>
@@ -36,12 +35,12 @@
         <th>ID</th>
         <th>Vorname</th>
         <th>Nachname</th>
-        <th>Gebursttag</th>
+        <th>Hinzugefügt</th>
         <tr th:each="view : ${usert}">
         <td th:text="${view.id}">ID</td>
-        <td th:text="${view.vorn}">Vorname</td>
-        <td th:text="${view.nachn}">Nachname</td>
-        <td th:text="${view.date}">Geburtstag</td>
+        <td th:text="${view.vorname}">Vorname</td>
+        <td th:text="${view.nachname}">Nachname</td>
+        <td th:text="${view.date}">Hinzugefügt</td>
         </tr>
     </table>
 </div>

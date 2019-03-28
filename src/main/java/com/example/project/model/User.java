@@ -3,8 +3,8 @@ package com.example.project.model;
 public class User {
 
     private Integer id;
-    private String vorn;
-    private String nachn;
+    private String Vorname;
+    private String Nachname;
     private String date;
 
     public User(){
@@ -19,20 +19,20 @@ public class User {
         this.id = id;
     }
 
-    public String getVorn() {
-        return vorn;
+    public String getVorname() {
+        return Vorname;
     }
 
-    public void setVorn(String vorn) {
-        this.vorn = vorn;
+    public void setVorname(String vorname) {
+        this.Vorname = vorname;
     }
 
-    public String getNachn() {
-        return nachn;
+    public String getNachname() {
+        return Nachname;
     }
 
-    public void setNachn(String nachn) {
-        this.nachn = nachn;
+    public void setNachname(String nachname) {
+        this.Nachname = nachname;
     }
 
     public String getDate() {
