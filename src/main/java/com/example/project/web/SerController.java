@@ -24,13 +24,13 @@ public class SerController {
 
     //Webseitenanzeige GetMappings
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/") // Man gibt IP Adresse ein plus den eingestellten port -> hier  8081 und man kommt auf die Index seite (localhost:8081/ )
     public String index() {
         return "index";
     }
 
 
-    @GetMapping(value = "/start")
+    @GetMapping(value = "/start")                   //Weiterleitung  zur hauptseite
     public String getStart() {
         return "Start";
     }
