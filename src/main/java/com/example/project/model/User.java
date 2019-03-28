@@ -7,7 +7,9 @@ public class User {
     private String nachn;
     private String date;
 
+    public User(){
 
+    }
 
     public Integer getId() {
         return id;

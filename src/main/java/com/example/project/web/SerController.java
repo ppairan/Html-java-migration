@@ -2,12 +2,15 @@ package com.example.project.web;
 
 import com.example.project.Services.ProjektService;
 import com.example.project.Services.ServerStatus;
+import com.example.project.model.User;
 import com.example.project.repository.DbRepository;
+import com.example.project.repository.UsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.*;
+
+import javax.websocket.server.PathParam;
 
 @Controller
 public class SerController {
@@ -19,7 +22,8 @@ public class SerController {
     @Autowired
     private DbRepository dbRepository;
 
-   // @Autowired AdRepository adRepository;
+    @Autowired
+    private UsRepository usRepository;
 
     //Webseitenanzeige GetMappings
 
@@ -46,30 +50,33 @@ public class SerController {
     }
 
     @GetMapping(value = "/view")
-    public String getView(@ModelAttribute("usert") DbRepository dbRepository, Model model){
+    public String getView(@ModelAttribute("usert") DbRepository dbRepository, Model model) {
         model.addAttribute("usert", dbRepository.findall());
         return "view";
     }
 
-    @GetMapping(value = "/change")
-    public String getChange()
-    {
-        return "change";
+    @GetMapping(value = "/create")
+    public String getCreate(){
+        return "create";
     }
 
     @GetMapping(value = "/kill")
-    public String getDelete(){
+    public String getDelete() {
         return "kill";
     }
 
 
     // Postmapping Webseiten
 
-
-
-
-
-
+    @PostMapping(value = "/create")
+    public String create(@RequestParam("vorn") String vorn, @RequestParam("nachn") String nachn){
+        User u = new User();
+        u.setVorn(vorn);
+        u.setNachn(nachn);
+        u.setDate("1993-05-12");
+        usRepository.addUser(u);;
+        return "create";
+    }
 
 
 
@@ -78,4 +85,9 @@ public class SerController {
     public String message(Model model) {
         return projektService.getServerstatus();
     }
+
+    //Requestmapping
+
+
+
 }
