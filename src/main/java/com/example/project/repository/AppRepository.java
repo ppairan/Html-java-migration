@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+ //CREATE TABLE praktikum(ID Integer(5) NOT NULL AUTO_INCREMENT, vorname VARCHAR(20) NOT NULL,Nachname VARCHAR(20) NOT NULL,CREATED_DATE DATETIME DEFAULT CURRENT_TIMESTAMP ,PRIMARY KEY (USER_ID)); <-- Copy & Paste für PHPMYADMIN
 @Component
 public class AppRepository {
 
