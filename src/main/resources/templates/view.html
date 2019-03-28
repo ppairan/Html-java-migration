@@ -21,6 +21,16 @@
         </ul>
     </div>
     <br>
+    <br>
+    <br>
+    <table class="table2">
+        <th>Tabellen Namen</th>
+        <th>test</th>
+        <tr th:each="view: ${tablet}">
+            <td th:text="${tablet.name}">Tabellennamen</td>
+        </tr>
+    </table>
+    <br>
     <table class="table">
         <th>ID</th>
         <th>Vorname</th>

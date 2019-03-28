@@ -1,6 +1,7 @@
 package com.example.project.repository;
 
 import com.example.project.model.User;
+import com.example.project.model.tables;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -55,4 +56,32 @@ public class DbRepository {
             }
             return users;
     }
+
+    public List <tables> tableview(){
+            ArrayList<tables> t = new ArrayList<>();
+
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/praktikum", "root", "");
+//                PreparedStatement stm = conn.prepareStatement("SELECT TABLES FROM Praktikum");
+            DatabaseMetaData dmd = conn.getMetaData();
+            ResultSet rs1 = dmd.getSchemas();
+            while(rs1.next()){
+
+                String ss = rs1.getString(1);
+                ResultSet rs2 = dmd.getTables(null,ss,"%",null);
+                while(rs2.next()){
+                    System.out.println(rs2.getString(3));
+                    tables ta =new tables();
+                    ta.setName(rs2.getString(3));
+                    t.add(ta);
+                }
+
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }return t;
+    }
 }
+
+
+

@@ -8,9 +8,10 @@ import com.example.project.repository.UsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import javax.websocket.server.PathParam;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SerController {
@@ -44,14 +45,16 @@ public class SerController {
     }
 
     @GetMapping(value = "/status")
-    public String getStatus(@ModelAttribute("SeStatus") ServerStatus serverStatus, Model model) {
+    public String getStatus(@ModelAttribute("SeStatus") ServerStatus serverStatus, Model model ) {
         model.addAttribute("SeStatus", ServerStatus.server());
+
         return "status";
     }
 
     @GetMapping(value = "/view")
-    public String getView(@ModelAttribute("usert") DbRepository dbRepository, Model model) {
-        model.addAttribute("usert", dbRepository.findall());
+    public String getView(@ModelAttribute(value = "user") DbRepository dbRepositoryUser, @ModelAttribute("tablet") DbRepository dbRepositoryTab ,  Model model) {
+        model.addAttribute("usert", dbRepositoryUser.findall());
+        model.addAttribute("tablet",dbRepositoryTab.tableview());
         return "view";
     }
 
@@ -64,7 +67,6 @@ public class SerController {
     public String getDelete() {
         return "kill";
     }
-
 
     // Postmapping Webseiten
 
